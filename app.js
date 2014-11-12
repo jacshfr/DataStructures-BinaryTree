@@ -2,20 +2,19 @@
 
 var BST = require('./tree');
 
-var words = new BST();
+// var paragraph = 'Today is the first day of rest of your life.';
 
-var paragraph = 'Today is the first day of rest of your life.';
-
-var init = function(paragraph, tree) {
+var app = function(paragraph) {
+  var words = new BST();
   var splitParagraph = paragraph.split(' ');
-  var max = {count: 1, name: ''};
+  var max = {count: 1, word: ''};
   for (var i = 0; i < splitParagraph.length; i++) {
     var word = splitParagraph[i];
-    if (tree.find(word)) {
-      tree.update(word);
-      if (tree.find(word).count > max.count) {
-        max.count = tree.find(word).count;
-        max.name = tree.find(word).data;
+    if (words.find(word)) {
+      words.update(word);
+      if (words.find(word).count > max.count) {
+        max.count = words.find(word).count;
+        max.word = words.find(word).data;
       }
     }
     words.insert(splitParagraph[i]);
@@ -23,4 +22,6 @@ var init = function(paragraph, tree) {
   return max;
 };
 
-console.log(init(paragraph, words));
+module.exports = app;
+
+// console.log(init(paragraph));

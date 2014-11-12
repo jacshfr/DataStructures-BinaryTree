@@ -28,14 +28,15 @@ BST.prototype.insert = function(data) {
         if (current === null) {
           parent.left = n;
           break;
-        } else {
-          current = current.right;
-          if (current === null) {
-            parent.right = n;
-            break;
-          }
+        }
+      } else {
+        current = current.right;
+        if (current === null) {
+          parent.right = n;
+          break;
         }
       }
+
     }
   }
 };
