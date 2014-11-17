@@ -94,7 +94,7 @@ BST.prototype.find = function(data) {
 };
 
 BST.prototype.remove = function(data) {
-  this.removeNode(this.root, data);
+  this.root = this.removeNode(this.root, data);
 };
 
 BST.prototype.removeNode = function(node, data) {
@@ -161,17 +161,5 @@ BST.prototype.edges = function() {
   counter(this.root);
   return total;
 };
-
-// var nums = new BST();
-
-// nums.insert(23);
-// nums.insert(45);
-// nums.insert(16);
-// nums.insert(37);
-// nums.insert(3);
-// nums.insert(99);
-// nums.insert(22);
-// // console.log('inorder traversal: ');
-// console.log(nums.edges());
 
 module.exports = BST;

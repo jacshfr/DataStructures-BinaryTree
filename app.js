@@ -2,8 +2,6 @@
 
 var BST = require('./tree');
 
-// var paragraph = 'Today is the first day of rest of your life.';
-
 var app = function(paragraph) {
   var words = new BST();
   var splitParagraph = paragraph.split(' ');
@@ -23,5 +21,3 @@ var app = function(paragraph) {
 };
 
 module.exports = app;
-
-// console.log(init(paragraph));
